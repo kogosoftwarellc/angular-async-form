@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body ng-controller="AppCtrl">
+    <h1>Hello {{ user.firstName }}!</h1>
+
+    <form promise-form="doSomething($event, cb)" novalidate>
+      <div class="control-group" promise-form-control-group>
+        <div class="error" promise-form-error-label>{{ error }}</div>
+
+        <input
+          name="firstName"
+          ng-model="user.firstName"
+          promise-form-control
+          required>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <script src="https://code.angularjs.org/1.4.8/angular.js"></script>
+    <script src="promise-form.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
