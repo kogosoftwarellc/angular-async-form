@@ -1,14 +1,37 @@
 {
-  "name": "form",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "Joseph Spencer",
+  "description": "Async form handling the angular way.",
+  "dependencies": {},
+  "devDependencies": {
+    "coveralls": "^2.11.6",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.16",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.2",
+    "phantomjs": "^1.9.19",
+    "rimraf": "^2.5.0",
+    "run-sequence": "^1.1.5",
+    "uglify": "^0.1.5"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.13.3"
-  }
+  "keywords": [
+    "angular",
+    "async",
+    "form",
+    "handling"
+  ],
+  "license": "MIT",
+  "main": "lib/angular-async-form.js",
+  "name": "angular-async-form",
+  "scripts": {
+    "cover": "gulp clean && gulp test && cat ./coverage/*/lcov.info | coveralls -v && rm -rf coverage",
+    "start": "node ./example/app.js",
+    "test": "gulp test"
+  },
+  "version": "0.0.0"
 }

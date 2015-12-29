@@ -6,21 +6,23 @@
   <body ng-controller="AppCtrl">
     <h1>Hello {{ user.firstName }}!</h1>
 
-    <form promise-form="doSomething($event, cb)" novalidate>
-      <div class="control-group" promise-form-control-group>
-        <div class="error" promise-form-error-label>{{ error }}</div>
+    <form af-submit="doSomething($event, user.firstName, cb)" novalidate>
+      <af-message>{{ message }}</af-message>
+      <div class="control-group" af-control-group>
+        <div class="error" af-control-error>{{ error }}</div>
 
         <input
           name="firstName"
           ng-model="user.firstName"
-          promise-form-control
+          af-control
           required>
         <button type="submit">Submit</button>
       </div>
+      <af-message>{{ message }}</af-message>
     </form>
 
     <script src="https://code.angularjs.org/1.4.8/angular.js"></script>
-    <script src="promise-form.js"></script>
+    <script src="angular-async-form.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

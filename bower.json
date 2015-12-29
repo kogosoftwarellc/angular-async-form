@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "Joseph Spencer"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.8",
+    "angular-mocks": "~1.4.8",
+    "chai": "~3.4.2"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "main": "./dist/angular-async-form.min.js",
+  "moduleType": [],
+  "name": "angular-async-form"
+}
