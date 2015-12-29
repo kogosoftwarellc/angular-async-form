@@ -6,4 +6,6 @@ notifications:
   email:
     on_success: "never"
 script:
+  - "npm install -g bower"
+  - "bower install"
   - "npm run cover"
