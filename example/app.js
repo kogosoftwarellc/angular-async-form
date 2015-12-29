@@ -3,7 +3,7 @@ var app = express();
 var path = require('path');
 
 app.use(express.static(path.resolve(__dirname, 'public')));
-app.use(express.static(path.resolve(__dirname, '..', 'dist')));
+app.use(express.static(path.resolve(__dirname, '..', 'lib')));
 
 app.get('/firstNames/:firstName', function(req, res) {
   if (req.params.firstName !== 'John') {
