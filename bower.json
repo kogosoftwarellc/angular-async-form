@@ -14,7 +14,7 @@
     "test",
     "tests"
   ],
-  "main": "./dist/angular-async-form.min.js",
+  "main": "./lib/angular-async-form.js",
   "moduleType": [],
   "name": "angular-async-form"
 }
