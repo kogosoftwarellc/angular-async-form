@@ -1,5 +1,7 @@
-# angular-async-form [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url]
+# angular-async-form
 > Async form handling the angular way.
+
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Awesome][awesome-image]][awesome-url]
 
 If you've been developing angular apps you know how difficult it is to handle
 errors from a backend after submitting a form.  Common scenarios include:
@@ -164,6 +166,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ``````
+
+[awesome-image]: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
+[awesome-url]: https://github.com/gianarb/awesome-angularjs#data-manage
 
 [downloads-image]: http://img.shields.io/npm/dm/angular-async-form.svg
 [npm-url]: https://npmjs.org/package/angular-async-form
