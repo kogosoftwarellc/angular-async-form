@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+    .error {color: red;}
+    </style>
   </head>
   <body ng-controller="AppCtrl">
     <h1>Hello {{ user.firstName }}!</h1>
 
     <form af-submit="doSomething($event, user.firstName, cb)" novalidate>
-      <af-message>{{ message }}</af-message>
+      <div class="error" af-message>{{ message }}</div>
       <div class="control-group" af-control-group>
-        <div class="error" af-control-error>{{ error }}</div>
+        <div class="error" af-control-message>{{ error }}</div>
 
         <input
           name="firstName"
@@ -18,7 +20,6 @@
           required>
         <button type="submit">Submit</button>
       </div>
-      <af-message>{{ message }}</af-message>
     </form>
 
     <script src="https://code.angularjs.org/1.4.8/angular.js"></script>
