@@ -35,5 +35,5 @@
     "start": "node ./example/app.js",
     "test": "gulp test"
   },
-  "version": "0.2.1"
+  "version": "0.2.2"
 }
