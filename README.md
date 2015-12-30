@@ -29,8 +29,9 @@ operations after the form is sumitted.
 control _must_ receive a `blur` event before setting it's validity again to `true`.
 * Display form wide error messages.
 * 100% asynchronous.  May be used with or without HTTP calls.
-* Versatile.
-* Handles all input types I.E. `input[type=radio]`, `input[type=checkbox]`, `textara`.
+* Versatile Directive API.
+* Handles all input types I.E. `input[type=radio]`, `input[type=checkbox]`, `textara`
+etc.
 
 ## Full Example
 The directives are used in concert as follows:
