@@ -24,7 +24,7 @@ message from the backend.
 
 * Unobtrusive.  Use `afControlMessage` in concert with `ngMessages` to display known
 validation errors in the UI before submitting the form, and unkown errors from async
-operations after the form is sumitted.
+operations after the form is submitted.
 * Prevents the form from being submitted if an error was returned for a control.  The
 control _must_ receive a `blur` event before setting it's validity again to `true`.
 * Display form wide error messages.
