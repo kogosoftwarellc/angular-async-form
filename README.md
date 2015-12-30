@@ -5,20 +5,32 @@ If you've been developing angular apps you know how difficult it is to handle
 errors from a backend after submitting a form.  Common scenarios include:
 
 * 500 errors with messages like `Sorry, an unkown error occured.  Please try again.`
-* 400 errors from input validation that were not caught on the front end.
+* 400 errors from input validation that were not caught in the UI.
 
 Angular provides a great set of directives _if_ your only concern is immediate client
-side validation, but it falls short for anything else.
+side validation; however, they fall short for anything else.
 
-`angular-async-form` (namespaced as `af`) fills this gap with the following
+`angular-async-form` (namespaced `af`) fills this gap with the following
 directives:
 
 * [afSubmit](#afsubmit)  This is a direct replacement for `ngSubmit`.
-* [afMessage](#afmessage)  Displays a general message from the backend.
+* [afMessage](#afmessage)  Displays a form wide message from the backend.
 * [afControlGroup](#afcontrolgroup)  Groups a form control with a corresponding
 message from the backend.
 * [afControl](#afcontrol)  Adds a form control to a form control group.
 * [afControlMessage](#afcontrolmessage)  Adds a message to a form control group.
+
+## Highlights
+
+* Unobtrusive.  Use `afControlMessage` in concert with `ngMessages` to display known
+validation errors in the UI before submitting the form, and unkown errors from async
+operations after the form is sumitted.
+* Prevents the form from being submitted if an error was returned for a control.  The
+control _must_ receive a `blur` event before setting it's validity again to `true`.
+* Display form wide error messages.
+* 100% asynchronous.  May be used with or without HTTP calls.
+* Versatile.
+* Handles all input types I.E. `input[type=radio]`, `input[type=checkbox]`, `textara`.
 
 ## Full Example
 The directives are used in concert as follows:
