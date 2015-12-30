@@ -87,6 +87,7 @@ function (message, errors)
 E.G. `Sorry, an unknown error occurred.  Please try again.`.  See [afMessage](#afmessage)
 for more details on displaying this value to a user.
 * `errors` - An enum of strings corresponding to control messages E.G.
+
   ```javascript
   {
     firstName: 'First names must start with the letter J at 4\'oclock in the afternoon.',
