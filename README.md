@@ -124,7 +124,7 @@ control, or group of controls in the case of radio buttons and checkboxes.  Mult
 
 |Restriction|Requires|Scope|
 |----|----|----|
-|`AE`|`^^afControlGroup`|Child Scope provides `message`|
+|`AE`|`^^afControlGroup`|Child Scope provides `error`|
 
 Adds a message to a form control group.  If the control received an error via the
 `errors` parameter to the callback in `afSubmit` then it will be provided in this
