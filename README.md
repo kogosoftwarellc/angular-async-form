@@ -118,7 +118,7 @@ function.
 
 Groups a form control with a corresponding message.  This allows error messages
 passed to the `errors` parameter in `afSubmit` to apply to their intended
-control, or group of controls in the case of radio buttons and checkboxes.
+control, or group of controls in the case of radio buttons and checkboxes.  Multiple `afControl`s must have the same name.
 
 ### afControlMessage
 

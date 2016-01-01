@@ -16,6 +16,8 @@
     "karma-coverage": "^0.5.3",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.2",
+    "karma-sinon": "^1.0.4",
+    "karma-sinon-chai": "^1.1.0",
     "phantomjs": "^1.9.19",
     "rimraf": "^2.5.0",
     "run-sequence": "^1.1.5",
@@ -31,6 +33,7 @@
   "main": "lib/angular-async-form.js",
   "name": "angular-async-form",
   "scripts": {
+    "preinstall": "bower install",
     "cover": "gulp clean && gulp test && cat ./coverage/*/lcov.info | coveralls -v && rm -rf coverage",
     "start": "node ./example/app.js",
     "test": "gulp test"
