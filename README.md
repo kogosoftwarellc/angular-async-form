@@ -3,36 +3,38 @@
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Awesome][awesome-image]][awesome-url]
 
-If you've been developing angular apps you know how difficult it is to handle
-errors from a backend after submitting a form.  Common scenarios include:
+If you've developed angular apps you know how difficult it is to handle
+errors _after_ submitting a form.  Common scenarios include:
 
 * 500 errors with messages like `Sorry, an unkown error occured.  Please try again.`
 * 400 errors from input validation that were not caught in the UI.
 
-Angular provides a great set of directives _if_ your only concern is immediate client
-side validation; however, they fall short for anything else.
+Angular provides a great set of directives _if_ your only concern is immediate
+validation in the UI; however, they fall short for anything else.
 
 `angular-async-form` (namespaced `af`) fills this gap with the following
 directives:
 
 * [afSubmit](#afsubmit)  This is a direct replacement for `ngSubmit`.
-* [afMessage](#afmessage)  Displays a form wide message from the backend.
+* [afMessage](#afmessage)  Displays a form wide message.
 * [afControlGroup](#afcontrolgroup)  Groups a form control with a corresponding
-message from the backend.
+error message.
 * [afControl](#afcontrol)  Adds a form control to a form control group.
 * [afControlMessage](#afcontrolmessage)  Adds a message to a form control group.
 
 ## Highlights
 
-* Unobtrusive.  Use `afControlMessage` in concert with `ngMessages` to display known
-validation errors in the UI before submitting the form, and unkown errors from async
-operations after the form is submitted.
-* Prevents the form from being submitted if an error was returned for a control.  The
-control _must_ receive a `blur` event before setting it's validity again to `true`.
+* Unobtrusive.  Use `afControlMessage` in concert with `ngMessages` to display
+known validation errors in the UI before submitting the form, and unkown errors
+from async operations after the form is submitted.
+* Prevents the form from being submitted if an error was returned for a control.
+The control _must_ receive a `blur` event before setting it's validity again to
+`true`.
 * Display form wide error messages.
 * 100% asynchronous.  May be used with or without HTTP calls.
 * Versatile Directive API.
-* Handles all input types I.E. `input[type=radio]`, `input[type=checkbox]`, `textara`
+* Handles all input types I.E. `input[type=radio]`, `input[type=checkbox]`,
+`textara`
 etc.
 
 ## Full Example
@@ -85,9 +87,9 @@ object, a callback is exposed as `cb`.  `cb` has the following signature:
 function (message, errors)
 ```
 
-* `message` - A string representing a general error message to display in the form
-E.G. `Sorry, an unknown error occurred.  Please try again.`.  See [afMessage](#afmessage)
-for more details on displaying this value to a user.
+* `message` - A message to display in the form E.G. `Sorry, an unknown error
+occurred.  Please try again.`.  This can be a string or any data type if you
+wish to display multiple form wide messages.  See [afMessage](#afmessage).
 * `errors` - An enum of strings corresponding to control messages E.G.
 
   ```javascript
@@ -96,7 +98,7 @@ for more details on displaying this value to a user.
     lastName: 'We could not accept this value at this time.'
   }
   ```
-  See [afControlMessage](#afcontrolmessage) for more details.
+  See [afControlMessage](#afcontrolmessage).
 
 ### afMessage
 
@@ -104,8 +106,9 @@ for more details on displaying this value to a user.
 |----|----|----|
 |`AE`|`^^afSubmit`|Child Scope provides `message`|
 
-Displays a general message from the backend.  The message is provided by passing a
-string as the `message` parameter in the `afSubmit` callback function.
+Adds a message to the child scope of the element it is used on.  The message is
+provided by passing a value as the `message` parameter in the `afSubmit` callback
+function.
 
 ### afControlGroup
 
@@ -113,8 +116,9 @@ string as the `message` parameter in the `afSubmit` callback function.
 |----|----|----|
 |`AE`|`^^afSubmit`|Parent Scope|
 
-Groups a form control with a corresponding message from the backend.  This allows
-control messages to apply for a group of radio buttons or checkboxes.
+Groups a form control with a corresponding message.  This allows error messages
+passed to the `errors` parameter in `afSubmit` to apply to their intended
+control, or group of controls in the case of radio buttons and checkboxes.
 
 ### afControlMessage
 
@@ -132,14 +136,14 @@ directive's scope.
 |----|----|----|
 |`A`|`^^afControlGroup, ngModel`|Parent Scope (name is a required attribute)|
 
-Adds a form control to `afControlGroup`.  The `name` attribute is used as the
+Adds a form control to a form control group.  The `name` attribute is used as the
 key when supplying `errors` to the callback function in `afSubmit`.  This directive
 may be used any number of times within `afControlGroup` (I.E. with radio inputs).
-If this directive does not exist within `afControlGroup`, then no error will display
-in `afControlMessage`.
+If this directive does not exist within `afControlGroup`, then no error will
+display in `afControlMessage`.
 
-Errors from the backend must be resolved by triggering a blur event on the control;
-otherwise, successive form submissions will be blocked.
+Errors must be resolved by triggering a blur event on the control; otherwise,
+successive evaluations of `afSubmit` will be blocked.
 
 ## License
 
