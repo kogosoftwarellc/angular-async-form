@@ -38,7 +38,7 @@
     "start": "node ./example/app.js",
     "test": "gulp test"
   },
-  "version": "0.3.1",
+  "version": "0.3.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kogosoftwarellc/angular-async-form.git"
