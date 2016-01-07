@@ -1,7 +1,7 @@
 # angular-async-form
 > Async form handling the angular way.
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Awesome][awesome-image]][awesome-url]
+[![Bower version][bower-image]][bower-url] [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Awesome][awesome-image]][awesome-url]
 
 If you've developed angular apps you know how difficult it is to handle
 errors _after_ submitting a form.  Common scenarios include:
@@ -177,6 +177,8 @@ THE SOFTWARE.
 [downloads-image]: http://img.shields.io/npm/dm/angular-async-form.svg
 [npm-url]: https://npmjs.org/package/angular-async-form
 [npm-image]: http://img.shields.io/npm/v/angular-async-form.svg
+[bower-url]: https://github.com/kogosoftwarellc/angular-async-form
+[bower-image]: http://img.shields.io/bower/v/angular-async-form.svg
 
 [travis-url]: https://travis-ci.org/kogosoftwarellc/angular-async-form
 [travis-image]: http://img.shields.io/travis/kogosoftwarellc/angular-async-form.svg
