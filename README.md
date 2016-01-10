@@ -15,7 +15,10 @@ validation in the UI; however, they fall short for anything else.
 `angular-async-form` (namespaced `af`) fills this gap with the following
 directives:
 
-* [afSubmit](#afsubmit)  This is a direct replacement for `ngSubmit`.
+* [afSubmit](#afsubmit)  This is a direct replacement for `ngSubmit`.  It accepts
+an angular expression (similar to `ngSubmit`), and in addition to `$event` it also
+exposes a callback function (exposed as `cb`).  `cb` is used to communicate with the
+rest of the directives listed herein.
 * [afMessage](#afmessage)  Displays a form wide message.
 * [afControlGroup](#afcontrolgroup)  Groups a form control with a corresponding
 error message.
@@ -27,9 +30,11 @@ error message.
 * Unobtrusive.  Use `afControlMessage` in concert with `ngMessages` to display
 known validation errors in the UI before submitting the form, and unkown errors
 from async operations after the form is submitted.
-* Prevents the form from being submitted if an error was returned for a control.
-The control _must_ receive a `blur` event before setting it's validity again to
-`true`.
+* Allows you to handle errors _after_ a form is submitted and display them to the
+user inside the form.
+* If an error was returned for a control (like for input validation that wasn't
+handled in the UI), the control _must_ receive a `blur` event before setting it's
+validity again to `true`.
 * Display form wide error messages.
 * 100% asynchronous.  May be used with or without HTTP calls.
 * Versatile Directive API.
@@ -51,7 +56,7 @@ The directives are used in concert as follows:
   <body ng-controller="AppCtrl">
     <h1>Hello {{ user.firstName }}!</h1>
 
-    <form af-submit="doSomething($event, user.firstName, cb)" novalidate>
+    <form af-submit="doSomething($event, cb)" novalidate>
       <div class="error" af-message>{{ message }}</div>
       <div class="control-group" af-control-group>
         <div class="error" af-control-message>{{ error }}</div>
@@ -61,6 +66,11 @@ The directives are used in concert as follows:
           ng-model="user.firstName"
           af-control
           required>
+
+        <!-- doSomething($event, cb) is called.  It's up to doSomething to warn the
+        user by calling cb if errors occured in async operations.  If no errors
+        occurred, then doSomething can do something else like hide the form and load
+        a new view. -->
         <button type="submit">Submit</button>
       </div>
     </form>
