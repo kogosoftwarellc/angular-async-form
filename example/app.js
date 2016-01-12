@@ -6,10 +6,22 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(express.static(path.resolve(__dirname, '..', 'lib')));
 
 app.get('/firstNames/:firstName', function(req, res) {
+  var errors = {};
+
   if (req.params.firstName !== 'John') {
-    res.status(400).json({
-      firstName: 'firstName must equal John'
-    });
+    errors.firstName = 'firstName must equal John';
+  }
+
+  if (req.query.title !== 'Mr') {
+    errors.title = 'title must be Mr';
+  }
+
+  if (!req.query.brownHairColor) {
+    errors.hairColor = 'hair color must be Brown';
+  }
+
+  if (Object.keys(errors).length) {
+    res.status(400).json(errors);
   } else {
     res.status(200).json({});
   }

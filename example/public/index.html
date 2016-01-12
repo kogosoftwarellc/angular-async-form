@@ -10,7 +10,31 @@
 
     <form af-submit="doSomething($event, user.firstName, cb)" novalidate>
       <div class="error" af-message>{{ message }}</div>
+
       <div class="control-group" af-control-group>
+        <p>Title</p>
+        <div class="error" af-control-message>{{ error }}</div>
+
+        <label>Mr <input name="title" ng-model="user.title" af-control required
+                          type="radio", value="Mr"></label>
+        <label>Mrs <input name="title" ng-model="user.title" af-control required
+                          type="radio", value="Mrs"></label>
+      </div>
+
+      <div class="control-group" af-control-group>
+        <p>Hair Color</p>
+        <div class="error" af-control-message>{{ error }}</div>
+
+        <label>Black <input name="hairColor" ng-model="user.blackHairColor" af-control
+                          type="checkbox", value="Black"></label>
+        <label>Blonde <input name="hairColor" ng-model="user.blondeHairColor" af-control
+                          type="checkbox", value="Blonde"></label>
+        <label>Brown <input name="hairColor" ng-model="user.brownHairColor" af-control
+                          type="checkbox", value="Brown"></label>
+      </div>
+
+      <div class="control-group" af-control-group>
+        <p>First Name</p>
         <div class="error" af-control-message>{{ error }}</div>
 
         <input
@@ -18,8 +42,9 @@
           ng-model="user.firstName"
           af-control
           required>
-        <button type="submit">Submit</button>
       </div>
+
+      <button type="submit">Submit</button>
     </form>
 
     <script src="https://code.angularjs.org/1.4.8/angular.js"></script>
