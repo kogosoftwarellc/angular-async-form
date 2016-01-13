@@ -124,7 +124,7 @@ function.
 
 |Restriction|Requires|Scope|
 |----|----|----|
-|`AE`|`^^afSubmit`|Parent Scope|
+|`AE`|`?^^afSubmit`|Parent Scope|
 
 Groups a form control with a corresponding message.  This allows error messages
 passed to the `errors` parameter in `afSubmit` to apply to their intended
