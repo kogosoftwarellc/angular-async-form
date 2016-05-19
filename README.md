@@ -25,6 +25,8 @@ error message.
 * [afControl](#afcontrol)  Adds a form control to a form control group.
 * [afControlMessage](#afcontrolmessage)  Adds a message to a form control group.
 
+You can customize it's behavior with [afConfig](#afconfig).
+
 ## Highlights
 
 * Unobtrusive.  Use `afControlMessage` in concert with `ngMessages` to display
@@ -154,6 +156,17 @@ display in `afControlMessage`.
 
 Errors must be resolved by triggering a blur event on the control; otherwise,
 successive evaluations of `afSubmit` will be blocked.
+
+## Configuration
+
+You can customize `angular-async-form` by using `afConfig`.
+
+### afConfig
+
+A simple object with the following properties:
+
+* `updateOn` (defaults to `blur change`) Setting this to a different DOM event changes
+the event used to trigger the removal of messages displayed with `afControlMessage`.
 
 ## License
 
